@@ -1,28 +1,35 @@
 # Substrate Package
 
-A stable, known working version of the [Substrate Node Template](https://github.com/paritytech/substrate/tree/master/node-template) and [Substrate UI](https://github.com/paritytech/substrate-ui).
+安定して動作が確認されているSubstrateです。
+[Substrate Node Template](https://github.com/paritytech/substrate/tree/master/node-template) 
+[Substrate UI](https://github.com/paritytech/substrate-ui).
 
-# How to use it:
-
- * Run `./get-substrate-dependencies.sh`
+# 使い方:
+ * `git clone https://github.com/masaki1223/substrate-package/`を実行。
+ 
+ * substrate-packageに移動後、 `./get-substrate-dependencies.sh`を実行。
+    * 必要な外部ディペンデンシーをインストールします。
     * This installs some external dependencies, take a look at the script
-    * Windows users need to follow [instructions here](https://github.com/paritytech/substrate#61-hacking-on-substrate) instead
+    * Windowsの場合は [こちら](https://github.com/paritytech/substrate#61-hacking-on-substrate) を参照。
 
- * Run `./substrate-package-rename.sh <project_name> <your_name>`
-    * This renames the project folders, and the binary file that gets created when you compile your runtime
+ * `./substrate-package-rename.sh <プロジェクト名> <Auth名>`を実行。
+    * プロジェクトフォルダーとランタイムをコンパイルしたときに作られるバイナリファイルの名前変更をします。
 
-* Go into the `<project_name>` folder and run:
-    * `./build.sh`
-    * `cargo build --release`
-    * `./target/release/<project_name> --dev`
-    * This should start your node, and you should see blocks being created
+ *  `<プロジェクト名>` フォルダに移動後、以下を実行:
+    * `./build.sh`　Wasmのビルド
+    * `cargo build --release`　バイナリのビルド
+    * `./target/release/<プロジェクト名> purge-chain --dev`　チェーンのデータを全消去（しておくとエラーが起こりにくい）
+    * `./target/release/<プロジェクト名> --dev`　チェーンの初期化とノード起動。ブロックが自動生成され始めます。
 
-* Go into the `<project_name>-ui` folder and run:
+ * `<プロジェクト名>` フォルダに移動後、以下を実行:
     * `yarn install`
     * `yarn run dev`
-    * This should start a web server on `localhost:8000` where you can interact with your node
-
-* Interact with your node and hack away!
+    * `localhost:8000` でノードを触れるローカルサーバーが立ち上がります。
+ 
+ * 代替UIアプリ [PolkadotAppUI](https://polkadot.js.org/apps/#/transfer)
+    * 左タブのSettings> `remote node/endpoint to connect to`を `Local Node`に設定。
+    *  `Save&Reload`ボタンを押して設定を適応＆更新。
+   
 
 # What is this?
 
