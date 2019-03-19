@@ -1,11 +1,13 @@
 # Substrate Package
 
-安定して動作が確認されているSubstrateです。
-[Substrate Node Template](https://github.com/paritytech/substrate/tree/master/node-template) 
-[Substrate UI](https://github.com/paritytech/substrate-ui).
+安定動作が確認されているSubstrateです。
+チュートリアルで最初に見かける`curl https://getsubstrate.io -sSf | bash`は最新のバージョンを取得するため、予期せぬエラーが起こりやすです。初心者の方や安定バージョンを使いたい方はこのレポを使ってください。</br>
+
+[Substrate Node Template](https://github.com/paritytech/substrate/tree/master/node-template) </br>
+[Substrate UI](https://github.com/paritytech/substrate-ui) 
 
 # 使い方:
- * `git clone https://github.com/masaki1223/substrate-package/`を実行。
+ * `git clone https://github.com/masaki1223/substrate-package/`でクローン。
  
  * substrate-packageに移動後、 `./get-substrate-dependencies.sh`を実行。
     * 必要な外部ディペンデンシーをインストールします。
